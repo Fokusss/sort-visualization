@@ -1,0 +1,12 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/font.css);
+@import url(../blocks/page/page.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__title/header__title.css);
+@import url(../blocks/config/config.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/config/__select/config__select.css);
+@import url(../blocks/config/__range/config__range.css);
+@import url(../blocks/container/container.css);
+@import url(../blocks/container/___block/container__block.css);
+@import url(../blocks/config/__range-value/config__range-value.css);

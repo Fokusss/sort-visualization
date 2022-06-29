@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: url(./OpenSans/OpenSans-Regular.woff) format("woff"),
+       url(./OpenSans/OpenSans-Regular.woff2) format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: url(./bebasNeue/BebasNeueBold.woff) format('woff'),
+       url(./bebasNeue/BebasNeueBold.woff2) format('woff2');
+  font-weight: 700;
+}

@@ -1,0 +1,6 @@
+.container__block {
+  margin: 0 0 0 1px;
+  height: 400px;
+  width: 3px;
+  background-color: coral;
+}

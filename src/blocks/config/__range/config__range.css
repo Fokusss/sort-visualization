@@ -1,0 +1,21 @@
+.config__range {
+  width: 200px;
+  height: 20px;
+  -webkit-appearance: none;
+  background: linear-gradient(90deg, rgb(257, 127, 80) 60%, rgb(255, 255, 255) 60%);
+  outline: none;
+  opacity: .7;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.config__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 27px;
+  height: 27px;
+  background-color: coral;
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+

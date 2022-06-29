@@ -1,0 +1,21 @@
+.button {
+  width: 150px;
+  height: 35px;
+  background-color: white;
+  border: 1px solid black;
+  font-weight: 700;
+  color: coral;
+
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.button:hover {
+  color: black;
+  border: 1px solid coral;
+  background-color: coral;
+}
+
+.button:focus {
+  outline: none;
+}
