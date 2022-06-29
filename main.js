@@ -1,0 +1,1 @@
+(()=>{"use strict";var e=document.querySelector(".config__range"),t=document.querySelector(".range-span");t.textContent=e.value,e.addEventListener("mousemove",(function(){var n=e.value/3;t.textContent=e.value;var r="background: linear-gradient(90deg, rgb(257, 127, 80) ".concat(n,"%, rgb(255, 255, 255) ").concat(n,"%);");e.setAttribute("style",r)}))})();
