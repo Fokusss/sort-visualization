@@ -2,7 +2,7 @@
   width: 200px;
   height: 20px;
   -webkit-appearance: none;
-  background: linear-gradient(90deg, rgb(257, 127, 80) 60%, rgb(255, 255, 255) 60%);
+  background: linear-gradient(90deg, rgb(257, 127, 80) 30%, rgb(255, 255, 255) 30%);
   outline: none;
   opacity: .7;
   border-radius: 20px;
