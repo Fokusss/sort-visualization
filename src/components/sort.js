@@ -22,7 +22,7 @@ export function* bubleSort() {
       return
     }
     const breks = 0;
-    for (let k = 0; k < countBlock.length; k++){
+    for (let k = 0; k < countBlock.length - i; k++){
       countBlock = container.querySelectorAll('.container__block');
       if (k === countBlock.length - 1){
         continue

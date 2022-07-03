@@ -1,13 +1,13 @@
 import './pages/index.css'
 import {clearContainer, disabledButtons, nonDisabledButtons, renderStart} from './components/render.js'
-import {slider, outputSlider, container, buttonStart, buttonRandom,} from './components/data.js'
+import {slider, outputSlider, container, buttonStart, buttonRandom, config, screen} from './components/data.js'
 import { bubleSort, speed,} from './components/sort';
 
 
 outputSlider.textContent = slider.value;
 
 slider.addEventListener('mousemove', () => {
-  let percent = (slider.value / 3);
+  let percent = (slider.value / config[2]);
   outputSlider.textContent = slider.value;
   let color = `background: linear-gradient(90deg, rgb(257, 127, 80) ${percent}%, rgb(255, 255, 255) ${percent}%);`;
   slider.setAttribute('style', color);
@@ -19,8 +19,30 @@ slider.addEventListener('mouseup', () => {
   renderStart(slider.value);
 })
 
+slider.addEventListener('touchmove', (evt) => {
+  let percent = (slider.value / config[2]);
+  outputSlider.textContent = slider.value;
+  let color = `background: linear-gradient(90deg, rgb(257, 127, 80) ${percent}%, rgb(255, 255, 255) ${percent}%);`;
+  slider.setAttribute('style', color);
+})
 
-renderStart(100);
+
+slider.addEventListener('touchend', ()=> {
+  let percent = (slider.value / config[2]);
+  outputSlider.textContent = slider.value;
+  let color = `background: linear-gradient(90deg, rgb(257, 127, 80) ${percent}%, rgb(255, 255, 255) ${percent}%);`;
+  slider.setAttribute('style', color);
+  const countBlock = container.querySelectorAll('.container__block')
+  clearContainer(countBlock);
+  renderStart(slider.value);
+})
+
+
+screen();
+
+
+renderStart(100)
+
 
 
 

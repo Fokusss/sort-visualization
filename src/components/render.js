@@ -1,4 +1,4 @@
-import {buttonRandom, buttonStart, container, select, slider,} from './data.js'
+import {buttonRandom, buttonStart, container, select, slider, config} from './data.js'
 
 export function clearContainer(blocks) {
   const mas = Array.from(blocks);
@@ -7,8 +7,8 @@ export function clearContainer(blocks) {
 
 const block = (col) => {
   let newBlock = document.createElement('div');
-  let height = Math.floor(Math.random() * 400 + 1);
-  let width = Math.floor((800 - col) / col);
+  let height = Math.floor(Math.random() * (config[0]) + 1);
+  let width = Math.floor((config[1] - col) / col);
   let style = `height: ${height}px; width: ${width}px;`
   newBlock.classList.add('container__block');
   newBlock.setAttribute('style', style);
