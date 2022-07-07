@@ -1,7 +1,7 @@
 import './pages/index.css'
 import {clearContainer, disabledButtons, nonDisabledButtons, renderStart} from './components/render.js'
-import {slider, outputSlider, container, buttonStart, buttonRandom, config, screen} from './components/data.js'
-import { bubleSort, speed,} from './components/sort';
+import {slider, outputSlider, container, buttonStart, buttonRandom, config, screen, buttonSelect} from './components/data.js'
+import { bubleSort, shackeSort, speed,} from './components/sort';
 
 
 outputSlider.textContent = slider.value;
@@ -53,16 +53,29 @@ buttonRandom.addEventListener('click', () => {
 })
 
 buttonStart.addEventListener('click', () => {
-  disabledButtons()
-  const time = speed()
-  const sort = bubleSort()
-  const buble = setInterval(() => {
-    sort.next()
-    if (sort.next().done){
-      clearInterval(buble)
-      nonDisabledButtons()
-    }
-  }, time)
+  if (buttonSelect.value == 1){
+    disabledButtons()
+    const time = speed()
+    const sort = bubleSort()
+    const buble = setInterval(() => {
+      sort.next()
+      if (sort.next().done){
+        clearInterval(buble)
+        nonDisabledButtons()
+      }
+    }, time)
+  } else if (buttonSelect.value == 2){
+    disabledButtons()
+    const time = speed()
+    const sort = shackeSort()
+    const shake = setInterval(() => {
+      sort.next()
+      if (sort.next().done){
+        clearInterval(shake)
+        nonDisabledButtons()
+      }
+    }, time)
+  }
 })
 
 

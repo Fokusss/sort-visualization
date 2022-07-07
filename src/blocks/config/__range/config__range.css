@@ -7,6 +7,8 @@
   opacity: .7;
   border-radius: 20px;
   border: 1px solid black;
+  transition: opacity .5s;
+  cursor: pointer;
 }
 
 .config__range::-webkit-slider-thumb {
@@ -17,5 +19,12 @@
   border-radius: 50%;
   border: 1px solid black;
   cursor: pointer;
+  transition: all .5s;
+}
+
+@media screen and (min-width: 801px) {
+  .config__range::-webkit-slider-thumb:hover {
+    background-color: black;
+  }
 }
 

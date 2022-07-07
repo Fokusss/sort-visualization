@@ -1,4 +1,10 @@
 .disabled {
   opacity: .1;
   background-color: black;
+  cursor: default;
+}
+
+.disabled:hover {
+  background-color: black;
+  color: coral;
 }

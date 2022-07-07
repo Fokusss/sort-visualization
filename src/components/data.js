@@ -5,6 +5,7 @@ export const buttonStart = document.querySelector('.config__start');
 export const buttonRandom = document.querySelector('.config__random');
 export const select = document.querySelector('.config__select');
 export const config = []
+export const buttonSelect = document.querySelector('.config__select');
 
 export function screen() {
   if (window.innerWidth < 800){

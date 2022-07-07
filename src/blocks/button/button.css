@@ -7,13 +7,7 @@
   color: coral;
 
   cursor: pointer;
-  transition: all .5s;
-}
-
-.button:hover {
-  color: black;
-  border: 1px solid coral;
-  background-color: coral;
+  transition: opacity .5s;
 }
 
 .button:focus {
@@ -24,5 +18,13 @@
 @media screen and (max-width: 800px) {
   .button {
     margin: 30px 0 0 0;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .button:hover {
+    color: black;
+    border: 1px solid coral;
+    background-color: coral;
   }
 }

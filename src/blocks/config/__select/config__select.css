@@ -5,6 +5,7 @@
   font-weight: 700;
   text-align: center;
   border: 1px solid black;
+  transition: opacity .5s;
 }
 
 .config__select:focus {
