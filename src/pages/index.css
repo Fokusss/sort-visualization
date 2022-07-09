@@ -14,3 +14,9 @@
 @import url(../blocks/disabled/disabled.css);
 @import url(../blocks/container/___block/_test/container__block_test.css);
 @import url(../blocks/config/__range/_disabled/config__range_disabled.css);
+@import url(../blocks/pop-up/pop-up.css);
+@import url(../blocks/pop-up/__body/pop-up__body.css);
+@import url(../blocks/pop-up/__close/pop-up__close.css);
+@import url(../blocks/pop-up/__list/pop-up__list.css);
+@import url(../blocks/pop-up/__title/pop-up__title.css);
+@import url(../blocks/pop-up/_active/pop-up_active.css);

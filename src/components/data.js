@@ -6,6 +6,9 @@ export const buttonRandom = document.querySelector('.config__random');
 export const select = document.querySelector('.config__select');
 export const config = []
 export const buttonSelect = document.querySelector('.config__select');
+export const popUpHistory = document.querySelector('.pop-up__list');
+export const popUp = document.querySelector('.pop-up');
+export const buttonPopUpClose = document.querySelector('.pop-up__close');
 
 export function screen() {
   if (window.innerWidth < 800){

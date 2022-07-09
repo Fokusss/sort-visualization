@@ -1,0 +1,21 @@
+.pop-up__close {
+  text-align: center;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: white;
+  color: coral;
+  border: 1px solid black;
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 700;
+  transition: all .5s;
+}
+
+@media screen and (min-width: 801px) {
+  .pop-up__close:hover {
+    color: black;
+    border: 1px solid coral;
+    background-color: coral;
+  }
+}

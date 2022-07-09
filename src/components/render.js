@@ -1,4 +1,4 @@
-import {buttonRandom, buttonStart, container, select, slider, config} from './data.js'
+import {buttonRandom, buttonStart, container, select, slider, config, popUpHistory, popUp} from './data.js'
 
 export function clearContainer(blocks) {
   const mas = Array.from(blocks);
@@ -51,4 +51,19 @@ export function nonDisabledButtons() {
   slider.setAttribute('style', color);
   select.removeAttribute('disabled', '');
   select.classList.remove('disabled');``
+}
+
+export function addStory(info) {
+  popUpHistory.append(info)
+}
+
+export function createStory(time, nameSort) {
+  const col = popUpHistory.querySelectorAll('li').length
+  const li = document.createElement('li')
+  li.textContent = `${col + 1}. ${nameSort}: ${time}c. V: ${slider.value}`;
+  return li
+}
+
+export function openPopUp() {
+  popUp.classList.add('pop-up_active');
 }

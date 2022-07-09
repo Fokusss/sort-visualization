@@ -1,6 +1,6 @@
 import './pages/index.css'
-import {clearContainer, disabledButtons, nonDisabledButtons, renderStart} from './components/render.js'
-import {slider, outputSlider, container, buttonStart, buttonRandom, config, screen, buttonSelect} from './components/data.js'
+import {addStory, clearContainer, createStory, disabledButtons, nonDisabledButtons, openPopUp, renderStart} from './components/render.js'
+import {slider, outputSlider, container, buttonStart, buttonRandom, config, screen, buttonSelect, buttonPopUpClose, popUp} from './components/data.js'
 import { bubleSort, shackeSort, speed,} from './components/sort';
 
 
@@ -44,6 +44,9 @@ screen();
 renderStart(100)
 
 
+buttonPopUpClose.addEventListener('click', () => {
+  popUp.classList.remove('pop-up_active')
+})
 
 
 buttonRandom.addEventListener('click', () => {
@@ -54,6 +57,7 @@ buttonRandom.addEventListener('click', () => {
 
 buttonStart.addEventListener('click', () => {
   if (buttonSelect.value == 1){
+    const start = (new Date()).getTime()
     disabledButtons()
     const time = speed()
     const sort = bubleSort()
@@ -62,9 +66,14 @@ buttonStart.addEventListener('click', () => {
       if (sort.next().done){
         clearInterval(buble)
         nonDisabledButtons()
+        const stop = (new Date()).getTime()
+        const rilTime = stop - start;
+        addStory(createStory(rilTime / 1000, 'Пузырьком'))
+        openPopUp();
       }
     }, time)
   } else if (buttonSelect.value == 2){
+    const start = (new Date()).getTime()
     disabledButtons()
     const time = speed()
     const sort = shackeSort()
@@ -73,6 +82,10 @@ buttonStart.addEventListener('click', () => {
       if (sort.next().done){
         clearInterval(shake)
         nonDisabledButtons()
+        const stop = (new Date()).getTime()
+        const rilTime = stop - start;
+        addStory(createStory(rilTime / 1000, 'Шейкером'))
+        openPopUp();
       }
     }, time)
   }

@@ -1,0 +1,10 @@
+.pop-up__list {
+  list-style-type: none;
+  padding: 0 0 0 15px;
+}
+
+ul > li {
+  margin-bottom: 7px;
+  color: coral;
+  font-weight: 400;
+}

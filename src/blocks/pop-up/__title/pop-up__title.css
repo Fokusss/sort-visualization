@@ -1,0 +1,10 @@
+.pop-up__title {
+  width: 100px;
+  margin: 10px auto 10px auto;
+  text-align: center;
+  color: coral;
+  font-weight: 700;
+  font-size: 17px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}

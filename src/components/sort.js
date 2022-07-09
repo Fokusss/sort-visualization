@@ -64,9 +64,11 @@ export function* shackeSort() {
         countBlock[k + 1].classList.remove("container__block_active");
       }
       i++
-      if (breks.at(-1) === 'f'){
+      breks.reverse();
+      let p = 0;
+      while (breks[p] === 'f'){
+        p++
         i++
-        console.log('i+i')
       }
     } else {
       for (let n = -1 - i; n > 0 - countBlock.length + q; n--) {
@@ -85,11 +87,13 @@ export function* shackeSort() {
         countBlock.at(n).classList.remove("container__block_active");
         countBlock.at(n - 1).classList.remove("container__block_active");
       }
-      if (breks.at(-1) === 'f'){
-        q++
-        console.log('q+q')
-      }
       q++
+      breks.reverse();
+      let p = 0;
+      while (breks[p] === 'f'){
+        p++
+        q++
+      }
     }
   }
 }
