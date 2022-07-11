@@ -37,6 +37,10 @@ export function changeBlock(block1, block2) {
   block2.setAttribute("style", style1);
 }
 
+export function changeBlockForQuickSort(opBlock, block2){
+  opBlock.after(block2);
+}
+
 export function disabledButtons() {
   const percent = slider.value / config[2];
   const color = `background: linear-gradient(90deg, black ${percent}%, rgb(255, 255, 255) ${percent}%);`;

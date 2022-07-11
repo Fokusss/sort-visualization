@@ -1,5 +1,5 @@
 import { container, slider } from "./data";
-import { changeBlock } from "./render";
+import { changeBlock, changeBlockForQuickSort} from "./render";
 
 export function speed() {
   if (slider.value < 30) {
@@ -98,8 +98,6 @@ export function* shackeSort() {
   }
 }
 
-
-
 export function* combSort() {
   let countBlock = Array.from(container.querySelectorAll(".container__block"));
   const cof = 1.247;
@@ -110,13 +108,13 @@ export function* combSort() {
       countBlock[i].classList.add("container__block_active");
       countBlock[j].classList.add("container__block_active");
       if (translate(countBlock[i]) > translate(countBlock[j])) {
-        changeBlock(countBlock[i], countBlock[j])
+        changeBlock(countBlock[i], countBlock[j]);
       }
       yield;
       countBlock[i].classList.remove("container__block_active");
       countBlock[j].classList.remove("container__block_active");
     }
-    step = Math.floor(step / cof)
+    step = Math.floor(step / cof);
   }
   for (let k = 0; k < countBlock.length - 1; k++) {
     countBlock = container.querySelectorAll(".container__block");
@@ -125,8 +123,31 @@ export function* combSort() {
     if (translate(countBlock[k]) > translate(countBlock[k + 1])) {
       changeBlock(countBlock[k], countBlock[k + 1]);
     }
-    yield
+    yield;
     countBlock[k].classList.remove("container__block_active");
     countBlock[k + 1].classList.remove("container__block_active");
   }
 }
+
+export function* quickSort(start, end) {
+  if (end - start > 1){
+    let blocks = container.querySelectorAll('.container__block');
+    let opBlock = blocks[end]
+    opBlock.classList.add("container__block_active");
+    let col = 0;
+    for (let i = start; i < end; i++){
+      blocks[i].classList.add("container__block_active");
+      if (translate(opBlock) < translate(blocks[i])){
+        col++;
+        changeBlockForQuickSort(opBlock, blocks[i]);
+      }
+      yield
+      blocks[i].classList.remove("container__block_active");
+    }
+    opBlock.classList.remove("container__block_active");
+     yield * quickSort(start, end - col - 1)
+     yield * quickSort(end - col, end)
+  }
+}
+
+
